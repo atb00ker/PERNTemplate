@@ -1,6 +1,6 @@
 let express = require('express');
 let router = express.Router();
-let home = require('./src/controllers/home');
+let home = require('../controllers/home');
 
 router.get('/', home.get_landing);
 
