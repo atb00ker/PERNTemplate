@@ -1,0 +1,31 @@
+# Node environment
+.cache.json
+.env
+node_modules
+build/
+.tmp
+
+
+# Misc
+.DS_Store
+._*
+Thumbs.db
+.cache
+.project
+.settings
+.tmproj
+*.esproj
+nbproject
+*.diff
+*.err
+*.orig
+*.log
+*.rej
+*.swo
+*.swp
+*.zip
+*.vi
+*~
+*.sass-cache
+.#*
+.git
