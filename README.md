@@ -12,6 +12,7 @@ Template for ProgreSQL-Express-React-Node CRUD application. Created for referenc
 ## Usage
 
 1. Run `npm install` in the root of the repository.
+2. Update the `.env` and update preferences as per requirement.
 
 ## Creation
 
@@ -25,3 +26,6 @@ npm install --save-dev webpack webpack-cli webpack-dev-server html-webpack-plugi
 npm install --save-dev @babel/core babel-loader @babel/preset-env @babel/preset-react
 npm install --save-dev css-loader style-loader scss-loader scss file-loader mini-css-extract-plugin
 ```
+
+4. Initialize and configure database using `npx sequelize-cli init`.
+5. Migrate after creating initial migration file `npx sequelize-cli db:migrate`.

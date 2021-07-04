@@ -7,7 +7,8 @@
     "start": "npm run node-start & npm run react-start",
     "node-start": "npx node-dev src/main.js --notify=false",
     "react-start": "webpack serve --open --mode development",
-    "react-build": "webpack --mode production"
+    "react-build": "webpack --mode production",
+    "migrate": "npx sequelize-cli db:migrate"
   },
   "dependencies": {
     "cookie-parser": "^1.4.5",
