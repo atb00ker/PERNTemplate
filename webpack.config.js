@@ -13,6 +13,9 @@ module.exports = {
     port: 8010,
     watchContentBase: true,
   },
+  resolve: {
+    extensions: [".js", ".jsx", ".json", ".ts", ".tsx"],
+  },
   module: {
     rules: [
       {
