@@ -21,6 +21,6 @@ models.sequelize.sync().then(_ => {
   app.listen(port);
   console.log(`API Server Running @ http://127.0.0.1:${port}`);
 }).catch(_ => {
-  console.log("SQL connection failed, couldn' connect to database.");
-})
+  console.log("SQL connection failed, couldn't connect to database.");
+});
 

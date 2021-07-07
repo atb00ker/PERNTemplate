@@ -1,14 +1,16 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import Pern from './components/pern';
-import PernDetails from './components/pernDetails';
-import { HashRouter as Router, Route } from "react-router-dom";
+import { HashRouter as Router, Route, Switch } from "react-router-dom";
+import Pern from './components/Pern/Pern';
+import PernDetails from './components/PernDetails/PernDetails';
 
 const App = () => {
   return (
     <Router>
-      <Route path="/pern/:uuid" render={(props) => <PernDetails {...props} />} />
-      <Route exact path="/" component={Pern} />
+      <Switch>
+        <Route path="/pern/:uuid" render={(props) => <PernDetails {...props} />} />
+        <Route exact path="/" component={Pern} />
+      </Switch>
     </Router>
   );
 };

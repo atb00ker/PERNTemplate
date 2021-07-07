@@ -1,7 +1,7 @@
 import React, { useRef, useState, useEffect } from 'react';
 import { getData, putData } from "../../services/data";
-import { IPern } from "../interfaces/IPern";
-import { IResponse } from "../interfaces/IResponse";
+import { IPern } from "../../interfaces/IPern";
+import { IResponse } from "../../interfaces/IResponse";
 
 const PernDetails = (props) => {
   const pernUrl = `/pern/${props.match.params.uuid}`;

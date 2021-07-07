@@ -24,11 +24,10 @@ module.exports = {
         use: { loader: 'babel-loader' }
       },
       {
-        test: /\.(css|scss)$/,
+        test: /\.css$/,
         exclude: /node_modules/,
         use: [
-          MiniCssExtractPlugin.loader,
-          'scss-loader',
+          'style-loader',
           'css-loader'
         ]
       },
@@ -43,7 +42,6 @@ module.exports = {
     ]
   },
   plugins: [
-    new MiniCssExtractPlugin(),
     new HtmlWebpackPlugin({
       template: __dirname + '/src/views/index.html',
       filename: 'index.html',

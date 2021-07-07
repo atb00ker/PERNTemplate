@@ -1,9 +1,10 @@
 import React, { useRef, useState, useEffect } from 'react';
 import useWebSocket from 'react-use-websocket';
 import { postData, getData, deleteData } from "../../services/data";
-import { IPern } from "../interfaces/IPern";
-import { IResponse } from "../interfaces/IResponse";
+import { IPern } from "../../interfaces/IPern";
+import { IResponse } from "../../interfaces/IResponse";
 import { Link } from "react-router-dom";
+import './Pern.css';
 
 const Pern = () => {
   const pernUrl = "/pern/",
@@ -47,9 +48,9 @@ const Pern = () => {
     <React.Fragment>
       <form onSubmit={(event: React.FormEvent) => onPernCreateSubmit(event)} method="post">
         <input type="text" name="pern_name" id="pern_name" ref={pernName} />
-        <button style={{ margin: '10px' }} type="submit">Submit</button>
+        <button data-testid="pern-submit-btn" id="submit_btn" style={{ margin: '10px' }} type="submit">Submit</button>
       </form>
-      <ul>
+      <ul data-testid="pern-list">
         {pernInDb.map(row => (
           <li key={row.id} id={row.id}>
             <span>{row.name}</span>
@@ -59,7 +60,7 @@ const Pern = () => {
         ))}
       </ul>
       {lastMessage?.data && <div>Last Updated: {lastMessage?.data}</div>}
-      {messageCollection && <div>Update List: {messageCollection.join(', ')}</div>}
+      {lastMessage?.data && messageCollection && <div>Update List: {messageCollection.join(', ')}</div>}
     </React.Fragment>
   );
 };

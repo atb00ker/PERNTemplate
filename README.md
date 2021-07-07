@@ -26,14 +26,20 @@ npm install --save express sequelize pg pg-hstore cors ws
 3. Install react dependencies:
 
 ```bash
-npm install --save react react-dom react-router-dom react-use-websocket
+npm install --save react react-dom react-router-dom react-use-websocket react-test-renderer
 npm install --save typescript @types/node @types/react @types/react-dom @types/jest
 npm install --save-dev webpack webpack-cli webpack-dev-server html-webpack-plugin
 npm install --save-dev @babel/core babel-loader @babel/preset-env @babel/preset-react @babel/preset-typescript
-npm install --save-dev css-loader style-loader scss-loader file-loader mini-css-extract-plugin
-npm install --save axios scss
+npm install --save-dev css-loader style-loader file-loader
+npm install --save axios
+# Testing
+npm install --save-dev @testing-library/react @testing-library/jest-dom jest react-test-renderer
+npm install --save-dev enzyme enzyme-adapter-react-16
+npm install --save @types/jest
 ```
+npm i @testing-library/dom
 
+    "typescript-plugin-css-modules": "^3.4.0",
 4. Initialize and configure database using `npx sequelize-cli init`.
 5. Migrate after creating initial migration file `npx sequelize-cli db:migrate`.
 
