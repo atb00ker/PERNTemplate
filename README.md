@@ -12,7 +12,7 @@ Template for ProgreSQL-Express-React-Node CRUD application. Created for referenc
 ## Usage
 
 1. Run `npm install` in the root of the repository.
-2. Update the `.env` and update preferences as per requirement.
+2. Rename `.env.example` to `.env` and update configurations as per requirement.
 
 ## Creation
 

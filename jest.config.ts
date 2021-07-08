@@ -8,6 +8,6 @@ export default {
   collectCoverage: true,
   coverageDirectory: "coverage",
   moduleNameMapper: {
-    '^.+\\.(css|less)$': '<rootDir>/config/stubcss.jest.js'
+    '^.+\\.(css|less)$': '<rootDir>/src/views/__test__/mock/CssLoaderMock.jest.js'
   },
 };

@@ -6,6 +6,7 @@ let express = require('express'),
   models = require('./models'),
   router = require('./routes/router'),
   app = express();
+require('dotenv').config();
 const port = 3000;
 
 app.engine('html', require('ejs').renderFile);
@@ -13,7 +14,7 @@ app.use(express.static(path.join(__dirname, "../dist")));
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 app.use(cors());
-app.options('*', cors());
+app.options(process.env.NODE_CORS, cors());
 app.use(cookieParser());
 app.use('/', router);
 

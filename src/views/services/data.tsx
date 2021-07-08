@@ -1,9 +1,7 @@
-// While development the path of localhost is different.
-const backendBaseUrl = 'http://localhost:3000';
 const axios = require('axios');
-axios.defaults.baseURL = backendBaseUrl;
 axios.defaults.headers.post['Content-Type'] = 'application/json;charset=utf-8';
-axios.defaults.headers.post['Access-Control-Allow-Origin'] = '*';
+axios.defaults.headers.post['Access-Control-Allow-Origin'] = process.env.REACT_CORS;
+axios.defaults.baseURL = `${process.env.HTTP_PROTOCOL}://${process.env.HTTP_HOST}:${process.env.HTTP_PORT}`;
 
 function getData<T>(url: string): Promise<T> {
   return axios.get(url)

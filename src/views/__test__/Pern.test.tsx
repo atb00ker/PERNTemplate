@@ -4,14 +4,16 @@
 
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Pern from '../Pern/Pern';
+import Pern from '../components/Pern/Pern';
 import { render, cleanup, act, waitFor, within } from '@testing-library/react';
 import renderer from 'react-test-renderer';
 import '@testing-library/jest-dom';
 import 'regenerator-runtime/runtime';
 import { HashRouter as Router } from "react-router-dom";
 import { mockGet_200, mockPost_201, pern1, pern2 } from './mock/HttpRequestMock';
+import dotenv from 'dotenv';
 
+dotenv.config();
 describe('Pern Component', () => {
   beforeEach(() => { mockGet_200([pern1]) });
   afterEach(() => { cleanup });

@@ -1,6 +1,7 @@
 const models = require("../models"),
   WebSocket = require('ws'),
-  wss = new WebSocket.Server({ host: 'localhost', port: 3001 });
+  wss = new WebSocket.Server({ host: process.env.WS_HOST, port: process.env.WS_PORT });
+require('dotenv').config();
 
 exports.update_websocket = function (_, res, _) {
   wss.clients.forEach(function each(client) {

@@ -13,7 +13,8 @@ const Pern = () => {
   const [pernInDb, setPernInDb] = useState(Array<IPern>());
   useEffect(() => getPernInDb(), [pernName]);
 
-  const { sendMessage, lastMessage, readyState } = useWebSocket('ws://localhost:3001');
+  const { sendMessage, lastMessage, readyState } = useWebSocket(
+    `${process.env.WS_PROTOCOL}://${process.env.WS_HOST}:${process.env.WS_PORT}`);
   const [messageCollection, setMessageCollection] = useState(Array<string>());
 
   useEffect(() => {
