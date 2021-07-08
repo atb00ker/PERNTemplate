@@ -10,4 +10,8 @@ export default {
   moduleNameMapper: {
     '^.+\\.(css|less)$': '<rootDir>/src/views/__test__/mock/CssLoaderMock.jest.js'
   },
+  testMatch: [
+    // "**/__tests__/Pern.test.js"
+    "**/?(*.)+(spec|test).[tj]s?(x)"
+  ],
 };

@@ -21,6 +21,9 @@ Template for ProgreSQL-Express-React-Node CRUD application. Created for referenc
 
 ```bash
 npm install --save express sequelize pg pg-hstore cors ws
+# Testing
+npm install --save-dev jest supertest
+npm install --save @types/jest
 ```
 
 3. Install react dependencies:
@@ -34,7 +37,6 @@ npm install --save-dev css-loader style-loader file-loader
 npm install --save axios
 # Testing
 npm install --save-dev @testing-library/react @testing-library/jest-dom jest react-test-renderer
-npm install --save-dev enzyme enzyme-adapter-react-16
 npm install --save @types/jest
 ```
 npm i @testing-library/dom

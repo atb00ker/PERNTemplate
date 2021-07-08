@@ -2,15 +2,16 @@
  * @jest-environment jsdom
  */
 
+import '@testing-library/jest-dom';
+import 'regenerator-runtime/runtime';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Pern from '../components/Pern/Pern';
-import { render, cleanup, act, waitFor, within } from '@testing-library/react';
+import { render, cleanup, act, waitFor } from '@testing-library/react';
 import renderer from 'react-test-renderer';
-import '@testing-library/jest-dom';
-import 'regenerator-runtime/runtime';
 import { HashRouter as Router } from "react-router-dom";
-import { mockGet_200, mockPost_201, pern1, pern2 } from './mock/HttpRequestMock';
+import { mockGet_200, mockPost_201 } from './mock/HttpRequestMock';
+import { pern1, pern2 } from '../../__tests__/mock/PernData';
 import dotenv from 'dotenv';
 
 dotenv.config();

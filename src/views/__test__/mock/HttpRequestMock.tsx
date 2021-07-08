@@ -2,9 +2,6 @@ import axios from 'axios';
 import { IResponse } from "../../interfaces/IResponse";
 import { IPern } from '../../interfaces/IPern';
 
-export const pern1: IPern = { id: "1", name: "Test#1" };
-export const pern2: IPern = { id: "2", name: "Test#2" };
-
 export const mockGet_200 = (data: Array<IPern>) => {
   const mockGet = jest.spyOn(axios, 'get');
   mockGet.mockImplementation((_) => {
