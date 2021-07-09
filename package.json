@@ -12,8 +12,8 @@
     "migrate": "npx sequelize-cli db:migrate",
     "migrate:reset": "npx sequelize-cli db:migrate:undo:all && npm run migrate",
     "kill": "pkill -f node",
-    "test": "jest --watch --runInBand --detectOpenHandles",
-    "test:watch": "jest --runInBand --detectOpenHandles",
+    "test": "jest --runInBand --detectOpenHandles",
+    "test:watch": "jest --watch --runInBand --detectOpenHandles",
     "test:debug": "node --inspect node_modules/.bin/jest --runInBand"
   },
   "dependencies": {

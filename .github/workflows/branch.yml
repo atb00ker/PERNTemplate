@@ -1,0 +1,31 @@
+---
+
+name: CI Tests
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    name: CI Build
+    runs-on: ubuntu-20.04
+    steps:
+    - name: Git Checkout
+      uses: actions/checkout@v2
+
+    # echo "$DOCKER_TOKEN" | docker login registry.gitlab.com --username "$DOCKER_USER" --password-stdin
+    # - name: Login to GitLab
+    #   uses: docker/login-action@v1
+    #   with:
+    #     registry: registry.gitlab.com
+    #     username: ${{ secrets.DOCKER_USER }}
+    #     password: ${{ secrets.DOCKER_TOKEN }}
+
+    - name: Setup for Testing Images
+      run: |
+          cp .env.example .env
+          docker-compose up -d postgres
+          npm install
+          npm run test

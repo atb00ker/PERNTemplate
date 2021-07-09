@@ -1,5 +1,7 @@
 # PERN Template
 
+![GitHub Workflow Status](https://img.shields.io/github/workflow/status/atbb00ker/PERNTemplate/CI)
+
 Template for ProgreSQL-Express-React-Node CRUD application. Created for reference for folks who are new to `nodejs`. Hence, some of the steps in this README are verbose. The documentation is written for debian based distributions.
 
 ## Pre-requisites
