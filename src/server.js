@@ -22,8 +22,8 @@ app.use('/ws', (req, res, next) => { req.ws = websocket; next(); });
 app.use('/', router);
 
 models.sequelize.sync().then(_ => {
-  server.listen(process.env.HTTP_PORT);
-  console.log(`API Server Running @ http://127.0.0.1:${process.env.HTTP_PORT}`);
+  server.listen(process.env.APP_PORT);
+  console.log(`API Server Running @ http://127.0.0.1:${process.env.APP_PORT}`);
 }).catch(_ => {
   console.log("SQL connection failed, couldn't connect to database.");
 });

@@ -16,7 +16,7 @@ const Pern = () => {
   useEffect(() => getPernInDb(), [pernName]);
 
   const { sendMessage, lastMessage, readyState } = useWebSocket(
-    `${process.env.WS_PROTOCOL}://${process.env.WS_HOST}:${process.env.WS_PORT}`);
+    `${process.env.WS_PROTOCOL}://${process.env.APP_HOST}:${process.env.APP_PORT}`);
   const [messageCollection, setMessageCollection] = useState(Array<string>());
 
   useEffect(() => {

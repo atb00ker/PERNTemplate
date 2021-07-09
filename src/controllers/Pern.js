@@ -1,5 +1,5 @@
 require('dotenv').config();
-const models = require("../models"),
+const db = require("../models"),
   WebSocket = require('ws');
 
 exports.update_websocket = function (req, res, __) {
@@ -12,19 +12,19 @@ exports.update_websocket = function (req, res, __) {
 }
 
 exports.create_pern = function (req, res, __) {
-  return models.Pern.create({ name: req.body.name }).then(row => {
+  return db.Pern.create({ name: req.body.name }).then(row => {
     res.status(201).send({ id: row.get('id'), name: row.get('name') });
   });
 }
 
 exports.get_pern = function (_, res, __) {
-  return models.Pern.findAll({ attributes: ['id', 'name'] }).then(result => {
+  return db.Pern.findAll({ attributes: ['id', 'name'] }).then(result => {
     res.status(200).send(result.map(row => row.get()));
   })
 }
 
 exports.get_pern_details = function (req, res, __) {
-  return models.Pern.findByPk(req.params.pern_id).then(result => {
+  return db.Pern.findByPk(req.params.pern_id).then(result => {
     if (result)
       res.status(200).send(result.get());
     else
@@ -33,13 +33,13 @@ exports.get_pern_details = function (req, res, __) {
 }
 
 exports.put_pern_details = function (req, res, __) {
-  models.Pern.findByPk(req.params.pern_id).then(result => {
+  db.Pern.findByPk(req.params.pern_id).then(result => {
     if (result) {
       result.update({ name: req.body.name }).then(row => {
         return res.status(200).send(row.get());
       });
     } else {
-      models.Pern.create({ id: req.params.pern_id, name: req.body.name }).then(row => {
+      db.Pern.create({ id: req.params.pern_id, name: req.body.name }).then(row => {
         return res.status(201).send(row.get());
       });
     }
@@ -47,7 +47,7 @@ exports.put_pern_details = function (req, res, __) {
 }
 
 exports.delete_pern_details = function (req, res, __) {
-  return models.Pern.destroy({ where: { id: req.params.pern_id } }).then(deleted => {
+  return db.Pern.destroy({ where: { id: req.params.pern_id } }).then(deleted => {
     if (deleted)
       res.status(204).send();
     else

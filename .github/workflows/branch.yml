@@ -28,4 +28,5 @@ jobs:
           cp .env.example .env
           docker-compose up -d postgres
           npm install
+          npm run migrate
           npm run test

@@ -1,6 +1,6 @@
 # PERN Template
 
-![GitHub Workflow Status](https://img.shields.io/github/workflow/status/atbb00ker/PERNTemplate/CI)
+![GitHub Workflow Status](https://img.shields.io/github/workflow/status/atb00ker/PERNTemplate/CI%20Tests)
 
 Template for ProgreSQL-Express-React-Node CRUD application. Created for reference for folks who are new to `nodejs`. Hence, some of the steps in this README are verbose. The documentation is written for debian based distributions.
 
@@ -15,6 +15,8 @@ Template for ProgreSQL-Express-React-Node CRUD application. Created for referenc
 
 1. Run `npm install` in the root of the repository.
 2. Rename `.env.example` to `.env` and update configurations as per requirement.
+3. Build application image `docker-compose build`
+4. Start application `docker-compose up`
 
 ## Creation
 
@@ -41,9 +43,7 @@ npm install --save axios
 npm install --save-dev @testing-library/react @testing-library/jest-dom jest react-test-renderer
 npm install --save @types/jest
 ```
-npm i @testing-library/dom
 
-    "typescript-plugin-css-modules": "^3.4.0",
 4. Initialize and configure database using `npx sequelize-cli init`.
 5. Migrate after creating initial migration file `npx sequelize-cli db:migrate`.
 
