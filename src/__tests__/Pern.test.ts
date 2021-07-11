@@ -1,17 +1,17 @@
-import 'regenerator-runtime/runtime';
-const { pern1, pern2 } = require('./mock/PernData');
-const request = require('./mock/RequestMock');
-const db = require('../models');
+import { pern1, pern2 } from './mock/PernData';
+import { createMultiplePern, createPern, getPern, updatePern, createTestApp } from './mock/RequestMock';
+import db from '../models';
+import { Express } from 'express';
 
 describe('Test Express API', function () {
-  let app = null;
+  let app: Express;
 
-  beforeAll(() => app = request.createTestApp());
+  beforeAll(() => app = createTestApp());
   beforeEach(() => db.Pern.destroy({ truncate: true }));
   afterAll(() => db.Pern.destroy({ truncate: true }));
 
   it('Create record successful', function (done) {
-    request.createPern(app, pern1).then(response => {
+    createPern(app, pern1).then(response => {
       expect(response.body.name).toBe(pern1.name);
       done();
     });
@@ -19,8 +19,8 @@ describe('Test Express API', function () {
 
   it('Get record list', function (done) {
     const pernList = [pern1, pern2];
-    request.createMultiplePern(app, pernList).then(_ => {
-      request.getPern(app).then(response => {
+    createMultiplePern(app, pernList).then(_ => {
+      getPern(app).then(response => {
         expect(response.body.length).toBe(pernList.length);
         expect(response.body[0].name).toBe(pern1.name);
         expect(response.body[1].name).toBe(pern2.name);
@@ -30,10 +30,10 @@ describe('Test Express API', function () {
   });
 
   it('Update record', function (done) {
-    request.createPern(app, pern1).then(response => {
+    createPern(app, pern1).then(response => {
       expect(response.body.name).toBe(pern1.name);
       const updatedName = "updatedName";
-      request.updatePern(app, response.body.id, updatedName).then(response => {
+      updatePern(app, response.body.id, updatedName).then(response => {
         expect(response.body.name).toBe(updatedName);
         done();
       });

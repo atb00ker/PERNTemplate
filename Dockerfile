@@ -4,7 +4,7 @@ WORKDIR /usr/src/app
 COPY package.json ./
 RUN JOBS=MAX npm install --include=dev && rm -rf /tmp/*
 COPY . ./
-RUN JOBS=MAX npm run react-build
+RUN JOBS=MAX npm run build
 ENV UDEV=1
 
-CMD ["npm", "run", "node-start"]
+CMD ["npm", "run", "node-prod"]

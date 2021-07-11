@@ -12,7 +12,7 @@ import renderer from 'react-test-renderer';
 import { HashRouter as Router } from "react-router-dom";
 import { mockGet_200, mockPost_201 } from './mock/HttpRequestMock';
 import { pern1, pern2 } from '../../__tests__/mock/PernData';
-import dotenv from 'dotenv';
+import * as dotenv from "dotenv";
 
 dotenv.config();
 describe('Pern Component', () => {

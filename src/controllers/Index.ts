@@ -2,6 +2,6 @@
 // rolling. It wouldn't be required in an actual
 // application because nginx can take care of this.
 
-exports.htmlPage = function (_, res, __) {
+export const html_page = (_: any, res: any, __: any) => {
   res.render('../../dist/index.html');
 }

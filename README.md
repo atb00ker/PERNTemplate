@@ -25,9 +25,12 @@ Template for ProgreSQL-Express-React-Node CRUD application. Created for referenc
 2. Install backend dependencies:
 
 ```bash
-npm install --save express sequelize pg pg-hstore cors ws
+npm install --save express sequelize pg pg-hstore cors ws dotenv sequelize-cli
+npm install --save-dev node-ts typescript
+npm install --save-dev @types/cookie-parser @types/typescript @types/cors @types/ws @types/sequelize @types/dotenv
 # Testing
-npm install --save-dev jest supertest
+npm install --save-dev jest supertest @types/supertest
+npm install --save-dev @babel/plugin-transform-runtime
 npm install --save @types/jest
 ```
 
@@ -36,7 +39,7 @@ npm install --save @types/jest
 ```bash
 npm install --save react react-dom react-router-dom react-use-websocket react-test-renderer
 npm install --save typescript @types/node @types/react @types/react-dom @types/jest
-npm install --save-dev webpack webpack-cli webpack-dev-server html-webpack-plugin
+npm install --save-dev webpack webpack-cli webpack-dev-server html-webpack-plugin dotenv-webpack
 npm install --save-dev @babel/core babel-loader @babel/preset-env @babel/preset-react @babel/preset-typescript
 npm install --save-dev css-loader style-loader file-loader
 npm install --save axios
