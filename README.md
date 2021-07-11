@@ -15,8 +15,9 @@ Template for ProgreSQL-Express-React-Node CRUD application. Created for referenc
 
 1. Run `npm install` in the root of the repository.
 2. Rename `.env.example` to `.env` and update configurations as per requirement.
-3. Build application image `docker-compose build`
-4. Start application `docker-compose up`
+3. Update `docker-compose.yml` variables.
+4. Build application image `docker-compose build`
+5. Start application `docker-compose up`
 
 ## Creation
 

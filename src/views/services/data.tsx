@@ -1,7 +1,8 @@
 const axios = require('axios');
+const port = location.protocol === 'http:' ? process.env.APP_PORT : '443';
 axios.defaults.headers.post['Content-Type'] = 'application/json;charset=utf-8';
 axios.defaults.headers.post['Access-Control-Allow-Origin'] = process.env.REACT_CORS;
-axios.defaults.baseURL = `${process.env.APP_PROTOCOL}://${process.env.APP_HOST}:${process.env.APP_PORT}`;
+axios.defaults.baseURL = `${location.protocol}//${location.hostname}:${port}`;
 
 function getData<T>(url: string): Promise<T> {
   return axios.get(url)

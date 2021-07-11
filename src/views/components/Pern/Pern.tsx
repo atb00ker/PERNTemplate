@@ -15,8 +15,10 @@ const Pern = () => {
   const [pernInDb, setPernInDb] = useState(Array<IPern>());
   useEffect(() => getPernInDb(), [pernName]);
 
+  const protocol = location.protocol === 'http:' ? 'ws:' : 'wss:';
+  const port = location.protocol === 'http:' ? process.env.APP_PORT : '443';
   const { sendMessage, lastMessage, readyState } = useWebSocket(
-    `${process.env.WS_PROTOCOL}://${process.env.APP_HOST}:${process.env.APP_PORT}`);
+    `${protocol}//${location.hostname}:${port}`);
   const [messageCollection, setMessageCollection] = useState(Array<string>());
 
   useEffect(() => {
